@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import React, { useEffect, useState } from "react";
 import About from "./components/About";
+import ComingSoon from "./components/ComingSoon";
 import Hero from "./components/Hero";
 
 const HomePageModule = () => {
@@ -26,6 +27,7 @@ const HomePageModule = () => {
       <Header />
       <Hero scrollPosition={scrollPosition} />
       <About />
+      <ComingSoon />
     </div>
   );
 };
