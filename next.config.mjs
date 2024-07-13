@@ -1,35 +1,23 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions */
-import { fileURLToPath } from 'node:url';
-
-import withBundleAnalyzer from '@next/bundle-analyzer';
-import { withSentryConfig } from '@sentry/nextjs';
-import createJiti from 'jiti';
-import withNextIntl from 'next-intl/plugin';
-
-const jiti = createJiti(fileURLToPath(import.meta.url));
-
-jiti('./src/libs/Env');
-
-const withNextIntlConfig = withNextIntl('./src/libs/i18n.ts');
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import { withSentryConfig } from "@sentry/nextjs";
 
 const bundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === "true",
 });
 
 /** @type {import('next').NextConfig} */
 export default withSentryConfig(
-  bundleAnalyzer(
-    withNextIntlConfig({
-      eslint: {
-        dirs: ['.'],
-      },
-      poweredByHeader: false,
-      reactStrictMode: true,
-      experimental: {
-        serverComponentsExternalPackages: ['@electric-sql/pglite'],
-      },
-    }),
-  ),
+  bundleAnalyzer({
+    eslint: {
+      dirs: ["."],
+    },
+    poweredByHeader: false,
+    reactStrictMode: true,
+    experimental: {
+      serverComponentsExternalPackages: ["@electric-sql/pglite"],
+    },
+  }),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
@@ -37,8 +25,8 @@ export default withSentryConfig(
     // Suppresses source map uploading logs during build
     silent: true,
     // FIXME: Add your Sentry organization and project names
-    org: 'nextjs-boilerplate-org',
-    project: 'nextjs-boilerplate',
+    org: "nextjs-boilerplate-org",
+    project: "nextjs-boilerplate",
   },
   {
     // For all available options, see:
@@ -51,7 +39,7 @@ export default withSentryConfig(
     transpileClientSDK: true,
 
     // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers (increases server load)
-    tunnelRoute: '/monitoring',
+    tunnelRoute: "/monitoring",
 
     // Hides source maps from generated client bundles
     hideSourceMaps: true,
@@ -64,5 +52,5 @@ export default withSentryConfig(
     // https://docs.sentry.io/product/crons/
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
-  },
+  }
 );

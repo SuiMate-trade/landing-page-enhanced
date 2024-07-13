@@ -6,7 +6,7 @@ export default {
     extend: {},
     colors: {
       black: {
-        100: "#232323"
+        100: "#000"
       },
       white: {
         100: "#fff"

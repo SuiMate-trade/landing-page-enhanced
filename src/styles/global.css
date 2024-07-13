@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'SharpSansDispNo1';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('./fonts/SharpSansDispNo1-Light.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'SharpSansDispNo1';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/SharpSansDispNo1-Medium.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'SharpSansDispNo1';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/SharpSansDispNo1-Semibold.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'SharpSansDispNo1';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('./fonts/SharpSansDispNo1-Bold.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'SharpSansDispNo1';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./fonts/SharpSansDispNo1-Extrabold.otf') format('opentype');
+  }
+}
+
 body {
-  background: #232323;
+  background: #000;
+}
+
+p {
+  font-family: 'SharpSansDispNo1', sans-serif;
 }
