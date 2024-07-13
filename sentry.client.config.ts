@@ -3,8 +3,6 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from "@sentry/nextjs";
-import * as Spotlight from "@spotlightjs/spotlight";
-
 Sentry.init({
   // FIXME: Add your Sentry DSN
   // dsn: '___DSN___',
