@@ -15,7 +15,7 @@ const Hero = (props: IPropType) => {
   // Gradually decrease the size of the image to 40px minimum as the user scrolls down
   useEffect(() => {
     const newSize = 400 - scrollPosition * 1.8;
-    setImageSize(newSize < 40 ? 40 : newSize);
+    setImageSize(newSize < 60 ? 60 : newSize);
   }, [scrollPosition]);
 
   console.log(scrollPosition);
